@@ -3,6 +3,7 @@ package com.betrybe.minhaconta.presentation;
 import com.betrybe.minhaconta.business.EnergyAccount;
 import com.ions.lightdealer.sdk.model.ElectronicDevice;
 import com.ions.lightdealer.sdk.service.LightDealerApi;
+import java.util.Scanner;
 
 /**
  * The type Application.
@@ -24,6 +25,28 @@ public class Application {
    * Req. 4 – Creates CLI menu.
    */
   public void run() {
+    Scanner scanner = new Scanner(System.in);
+    ConsoleUserInterface cui = new ConsoleUserInterface(scanner);
+
+    String[] options = {
+        "1 - Cadastrar cliente",
+        "2 - Cadastrar imóvel de cliente",
+        "3 - Cadastrar dispositivos em imóvel",
+        "4 - Estimar conta de imóvel",
+        "5 - Otimizar uso de energia",
+        "6 - Sair"
+    };
+
+    while (true) {
+      char selectedOption = cui.inputMenuOption(options);
+
+      if (selectedOption == '6') {
+        break;
+      } else {
+        this.runOptionAction(selectedOption);
+      }
+
+    }
   }
 
   /**
