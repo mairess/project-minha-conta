@@ -94,6 +94,7 @@ public class Application {
 
     if (client == null) {
       ui.showMessage("Pessoa cliente não encontrada!");
+      return;
     }
 
     Address address = new Address();
