@@ -1,10 +1,14 @@
 package com.betrybe.minhaconta.presentation;
 
 import com.betrybe.minhaconta.business.EnergyAccount;
+import com.betrybe.minhaconta.business.EnergyBill;
 import com.ions.lightdealer.sdk.model.Address;
 import com.ions.lightdealer.sdk.model.Client;
 import com.ions.lightdealer.sdk.model.ElectronicDevice;
 import com.ions.lightdealer.sdk.service.LightDealerApi;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -130,6 +134,23 @@ public class Application {
    * Req. 9 – Estimates the address energy bill.
    */
   public void estimateAddressBill() {
+    String addressRegistration = ui.inputAddressRegistration();
+    Address address = api.findAddress(addressRegistration);
+
+    if (address == null) {
+      ui.showMessage("Endereço não encontrado!");
+      return;
+    }
+
+    EnergyBill energyBill = new EnergyBill(address, true);
+
+    DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+    DecimalFormat df = new DecimalFormat("#.0", symbols);
+
+    double billValue = energyBill.estimate();
+
+    ui.showMessage("Valor estimado para a conta: " + df.format(billValue));
+    /* ui.showMessage("Valor estimado para a conta: %.2f".formatted(billValue)); */
   }
 
   /**
