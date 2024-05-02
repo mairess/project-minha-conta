@@ -25,9 +25,6 @@ public class Application {
    * Req. 4 – Creates CLI menu.
    */
   public void run() {
-    Scanner scanner = new Scanner(System.in);
-    ConsoleUserInterface cui = new ConsoleUserInterface(scanner);
-
     String[] options = {
         "1 - Cadastrar cliente",
         "2 - Cadastrar imóvel de cliente",
@@ -37,15 +34,16 @@ public class Application {
         "6 - Sair"
     };
 
+
     while (true) {
-      char selectedOption = cui.inputMenuOption(options);
+    char selectedOption = ui.inputMenuOption(options);
 
       if (selectedOption == '6') {
+        this.runOptionAction(selectedOption);
         break;
       } else {
         this.runOptionAction(selectedOption);
       }
-
     }
   }
 
