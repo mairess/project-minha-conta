@@ -1,6 +1,7 @@
 package com.betrybe.minhaconta.presentation;
 
 import com.betrybe.minhaconta.business.EnergyAccount;
+import com.ions.lightdealer.sdk.model.Client;
 import com.ions.lightdealer.sdk.model.ElectronicDevice;
 import com.ions.lightdealer.sdk.service.LightDealerApi;
 import java.util.Scanner;
@@ -33,7 +34,6 @@ public class Application {
         "5 - Otimizar uso de energia",
         "6 - Sair"
     };
-
 
     while (true) {
       char selectedOption = ui.inputMenuOption(options);
@@ -79,6 +79,9 @@ public class Application {
    * Req. 6 – Register client.
    */
   public void registerClient() {
+    Client client = new Client();
+    ui.fillClientData(client);
+    api.addClient(client);
   }
 
   /**
