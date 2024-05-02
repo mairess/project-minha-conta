@@ -36,7 +36,7 @@ public class Application {
 
 
     while (true) {
-    char selectedOption = ui.inputMenuOption(options);
+      char selectedOption = ui.inputMenuOption(options);
 
       if (selectedOption == '6') {
         this.runOptionAction(selectedOption);
