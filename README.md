@@ -16,4 +16,4 @@ outras funcionalidades.
 git clone git@github.com:mairess/project-minha-conta.git
 ```
 
-2. Rode a classe `Main` que está em `src/main/java/com/betrybe/minhaconta/Main`:
+2. Rode a classe `Main` que está em `src/main/java/com/betrybe/minhaconta/Main`
