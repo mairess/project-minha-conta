@@ -6,7 +6,7 @@ Este projeto é uma ferramenta para gestão de consumo energético. Ele permite 
 consumidoras emitam suas faturas, estimem os gastos mensais, consultem histórico de pagamentos
 outras funcionalidades.
 
-<summary><strong>Rode o projeto localmente</strong></summary><br>
+<strong>Rode o projeto localmente</strong><br>
 
 > ⚠️ É preciso ter [Java](https://www.oracle.com/java/) instalado em sua máquina.
 
